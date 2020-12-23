@@ -21,6 +21,7 @@ client.on('message', function (topic, message) {
 app.post('/', (req, res) => {
   console.log(req.body);
   client.publish('deerdeveloper_webhook_test/data', req.body);
+  res.send(req.body);
 })
 
 app.listen(port, () => {
