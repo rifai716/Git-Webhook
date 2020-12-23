@@ -24,8 +24,8 @@ client.on('message', function (topic, message) {
 
 app.post('/', (req, res) => {
   console.log(req.body.toString());
-  client.publish('deerdeveloper_webhook_test/data', req.body.branch);
-  res.send(req.body.branch);
+  client.publish('deerdeveloper_webhook_test/data', req.body.repository.url);
+  res.send(req.body.repository.url);
 })
 
 app.listen(port, () => {
