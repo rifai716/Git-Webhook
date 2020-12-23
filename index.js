@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 var mqtt = require('mqtt')
-var client  = mqtt.connect('mqtt://test.mosquitto.org')
+var client  = mqtt.connect('mqtt://broker.hivemq.com')
 
 client.on('connect', function () {
   client.subscribe('deerdeveloper_webhook_test', function (err) {
