@@ -18,9 +18,9 @@ client.on('message', function (topic, message) {
 })
 
 
-app.get('/', (req, res) => {
-  console.log(req);
-  client.publish('deerdeveloper_webhook_test/data', req);
+app.post('/', (req, res) => {
+  console.log(req.body);
+  client.publish('deerdeveloper_webhook_test/data', req.body);
 })
 
 app.listen(port, () => {
